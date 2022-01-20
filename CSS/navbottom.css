@@ -1,0 +1,33 @@
+/* ================================================
+Navigationbar bottom
+================================================ */
+
+footer {
+    bottom: 0;
+    position: fixed;
+    margin: 3% 0 0;
+    border-top: 3px #EAE2B7 solid;
+    background-color: #003049;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+   
+}
+
+nav li {
+    margin: 0 45% 0 45%;
+}
+
+nav a {
+    font-size: 35px;
+    color: #EAE2B7;
+    text-decoration: none;
+}
