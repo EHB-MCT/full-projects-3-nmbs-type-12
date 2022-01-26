@@ -25,3 +25,13 @@ window.onload = function () {
         display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
 };
+
+// Attributen laten weergeven op het veld
+
+let iconStoom = document.getElementById("iconStoom");
+
+function placePlayField() {
+    if (iconStoom == true) {
+        
+    }
+}
