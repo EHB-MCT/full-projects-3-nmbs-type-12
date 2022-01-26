@@ -1,172 +1,18 @@
-/* ================================================
-Start Page
-================================================ */
-
-#StartGame {
-    text-align: center;
-    padding: 50% 0;
-}
-
-#StartGame h3 {
-    font-size: 50px;
-    color: #F77F00;
-}
-
-#StartGame p {
-    font-size: 16px;
-    color: #EAE2B7;
-    line-height: 21px;
-    margin: 5% 0 5% 0;
-}
-
-#StartGame p:last-child {
-    margin-top: 18%;
-}
-
-#StartGame a {
-    font-size: 30px;
-    text-decoration: none;
-    color: #EAE2B7;
-    background-color: #D62828;
-    padding: 5% 15% 5% 15%;
-    border-radius: 17px;
-}
-
-/* ================================================
-nextRoom Page
-================================================ */
-
-#nextRoom {
-    text-align: center;
-    padding: 80% 0;
-}
-
-#nextRoom h1 {
-    font-size: 30px;
-    line-height: 40px;
-    color: #EAE2B7;
-}
-
-/* ================================================
-Pop-up Page
-================================================ */
-
-#Popup {
-    border: 6px #EAE2B7 solid;
-    border-radius: 17px;
-    text-align: center;
-    padding: 2% 5% 10% 5%;
-    margin-top: 5%;
-}
-
-#Popup figure h1 {
-    margin: 0;
-    color: #EAE2B7;
-    text-align: center;
-    padding: 3% 0 3% 0;
-}
-
-#Popup h1:nth-of-type(2) {
-    text-align: left;
-}
-
-#Popup h2 {
-    color: #D62828;
-    text-align: center;
-    margin-bottom: 5%;
-    border-bottom: 1px #D62828 solid;
-}
-
-#Popup figure img {
-    width: 175px;
-}
-
-#Popup figcaption,
-#Popup small {
-    color: #EAE2B7;
-    text-align: left;
-    padding: 3% 0 3% 0;
-}
-
-#Popup figcaption {
-    line-height: 21px;
-}
-
-/* ================================================
-ELementen Page
-================================================ */
-
-#allElements {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.element img {
-    width: 87%;
-    background-color: #044160;
-    border-radius: 17px;
-    margin: 2%;
-}
-
-/* ================================================
-Quest Page
-================================================ */
+@import url(../css/color.css);
 
 body {
-    background-color: #003049;
+    background-color: var(--darkBlue);
+    color: var(--white);
 }
 
-.wrapper {
-    margin: 5%;
+main section img {
+    width: 10%;
+    border: solid 2px black;
+    padding: 0.4% 1%;
+    border-radius: 10px;
 }
 
-h1,
-h2,
-h3,
-p,
-figcaption,
-small {
-    font-family: 'Signika', sans-serif;
-}
-
-main h1 {
-    color: #F77F00;
-    font-size: 30px;
-    margin: 8% 0 0 3%;
-}
-
-main h2 {
-    color: #EAE2B7;
-    font-size: 24px;
-    padding: 1% 0 1% 0;
-}
-
-main p {
-    color: #F77F00;
-    font-size: 18px;
-}
-
-main p:nth-last-child(1) {
-    color: #D62828;
-}
-
-main small {
-    color: #EAE2B7;
-    font-size: 18px;
-}
-
-main .container {
-    display: flex;
-    justify-content: space-between;
-}
-
-main .Quest {
-    background-image: linear-gradient(to right,  #044160, #003049);
-    padding: 4% 7% 4% 7%;
-    border-radius: 17px;
-    margin: 4% 0 4% 0;
-}
-
-main #questDone {
-    opacity: 30%;
+#countdownTimer {
+    float: right;
+    margin: 2% 5% 0 5%;
 }
