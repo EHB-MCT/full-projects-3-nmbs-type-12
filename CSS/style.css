@@ -1,0 +1,18 @@
+@import url(../css/color.css);
+
+body {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+main section img {
+    width: 10%;
+    border: solid 2px black;
+    padding: 0.4% 1%;
+    border-radius: 10px;
+}
+
+#countdownTimer {
+    float: right;
+    margin: 2% 5% 0 5%;
+}
