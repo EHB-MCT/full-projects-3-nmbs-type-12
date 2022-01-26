@@ -3,16 +3,46 @@
 body {
     background-color: var(--darkBlue);
     color: var(--white);
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-row: 2/3;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    max-height: 80vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    align-items: center;
 }
 
 main section img {
-    width: 10%;
     border: solid 2px black;
     padding: 0.4% 1%;
-    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    margin: 0.5%;
+    height: 100%;
+    width: 70%;
 }
 
-#countdownTimer {
-    float: right;
-    margin: 2% 5% 0 5%;
+header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column: 1/4;
+}
+
+header section {
+    width: 100%;
+    grid-column: 3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
