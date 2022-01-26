@@ -1,0 +1,11 @@
+@import url(../css/color.css);
+
+body {
+    background-color: var(--darkBlue);
+    color: var(--white);
+}
+
+#countdownTimer {
+    float: right;
+    margin: 2% 5% 0 5%;
+}
