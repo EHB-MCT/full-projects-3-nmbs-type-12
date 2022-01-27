@@ -1,6 +1,15 @@
 @import url(../css/color.css);
 
-body {
+@font-face {
+    font-family: Font;
+    src: url(../media/FFFFORWA.TTF);
+}
+
+* {
+    font-family: Font;
+}
+
+/*body {
     background-color: var(--darkBlue);
     color: var(--white);
     display: grid;
@@ -19,8 +28,6 @@ main section {
     flex-direction: column;
     grid-column: 1/2;
     max-height: 80vh;
-    overflow: scroll;
-    overflow-x: hidden;
     align-items: center;
 }
 
@@ -45,4 +52,92 @@ header section {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+*/
+
+/* F O O T E R */
+
+.footer {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer .colorsAtri .button {
+    background: #25458B;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+    padding: 1.1em 2em;
+    text-decoration: none;
+    border-radius: 25px 0px 0px 0px;
+    transform: skew(-20deg);
+    border-right: 10px solid white;
+}
+
+.footer .colorsAtri .skew-fix {
+    display: inline-block;
+    transform: skew(20deg);
+}
+
+.footer .colorsAtri .skew-fix img {
+    width: 50px;
+}
+
+.footer .allAtri {
+    background: #2F4169;
+    padding: 0px 10%;
+    margin-left: -50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .allAtri .skew-fix img {
+    width: 50px;
+    margin: 5px;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+
+.footer .allAtri .skew-fix img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.footer .allAtri .skew-fix:nth-child(1) {
+    margin-left: 28px;
+    margin-top: 20px;
+}
+
+.footer .allAtri .skew-fix:nth-child(2) {
+    margin-left: -17px;
+}
+
+
+.footer .klaar .button {
+    background: #25458B;
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    padding: 3em 2em;
+    text-decoration: none;
+    border-radius: 0px 25px 0px 0px;
+    transform: skew(20deg);
+    border-left: 10px solid white;
+    margin-left: -50px;
+}
+
+.footer .klaar .button:hover {
+    background: #31549e;
+}
+
+.footer .klaar .skew-fix {
+    display: inline-block;
+    transform: skew(-20deg);
 }
