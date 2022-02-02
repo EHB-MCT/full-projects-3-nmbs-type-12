@@ -47,7 +47,7 @@ function startTimer(duration, display) {
 // Attributen laten weergeven op het veld
 // Link to code
 // https://stackoverflow.com/questions/25151339/how-to-display-images-from-a-javascript-array-object-starting-with-the-first-im
-
+// Arrays of images => https://www.youtube.com/watch?v=KI9Svonh8I0
 var Attributes = [
     "media/icons/blauw.png",
     "media/icons/grijsgeel.png",
@@ -326,11 +326,8 @@ function ClearAll() {
     for (let i = 0; i < buttonsAttributes.length; i++) {
         document.getElementById(buttonsAttributes[i]).classList.remove("active");
     }
+    AtriLijst = [];
 }
-
-
-//Usefull links
-// Arrays of images => https://www.youtube.com/watch?v=KI9Svonh8I0
 
 
 
@@ -417,5 +414,15 @@ function MixAttributes() {
         }
     
         console.log(AtriLijst);
+
+        document.getElementById("playField1").innerHTML = "";
+        document.getElementById("playField2").innerHTML = ""; 
+        document.getElementById("playField3").innerHTML = ""; 
+        counter = 1;
+        
+        for (let i = 0; i < buttonsAttributes.length; i++) {
+            document.getElementById(buttonsAttributes[i]).classList.remove("active");
+        }
+        AtriLijst = [];
     }
 }
