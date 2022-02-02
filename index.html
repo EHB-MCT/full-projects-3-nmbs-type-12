@@ -1,52 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainworld</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <title>Train Mixer</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
+
 <body>
     <header>
         <section id="countdownTimer" class="timer">
-            <article><span id="time">05:00</span>  <p>minuten!</p></article>
+            <article><span id="time">05:00</span>
+                <p>minuten!</p>
+            </article>
         </section>
 
-        <section  class="chatbot">
+        <section class="chatbot">
             <article>
                 <p>Chatbot</p>
                 <img src="./media/images/nmbs guy.png" alt="chatbot">
             </article>
         </section>
-                   
+
     </header>
 
     <main>
+      
+        <section class="pop-up">
+            <button onclick="showTrein()">Super!</button>
+        </section>
+
         <img src="./media/images/mystery train attributen.png" class="mysterytrain" alt="Rechthoekige border">
         <section class="leftmenu">
-            <p>1/9</p>
+            <article>
+            <p id="counttrain">1</p>
+            <p>/10</p>
+        </article>
             <figure>
-                <img src="./media/images/rechthoek.png" class="bottom" alt="Rechthoekige border">
-                <img src="./media/images/Type12.png" class="top" alt="trein">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-                <img src="./media/images/rechthoek.png" alt="Rechthoekige border">
-               
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom1" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype12.png" id="trein1" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom2" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype13.png" id="trein2" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom3" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype18.png" id="trein3" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom4" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype21.png" id="trein4" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom5" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype51.png" id="trein5" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom6" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype64.png" id="trein6" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom7" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype211.png" id="trein7" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom8" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype551.png" id="trein8" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom9" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtype608.png" id="trein9" class="top" alt="trein">
+                </section>
+                <section class="group">
+                    <img src="./media/images/rechthoek.png" id="bottom10" class="bottom" alt="Rechthoekige border">
+                    <img src="./media/images/activtypepays.png" id="trein10" class="top" alt="trein">
+                </section>
+
             </figure>
-            <p>Nog 8 treinen <br>te vinden</p>
+
+            <article>
+            <p>Nog 9 treinen <br>te vinden</p>
+        </article>
 
         </section>
+        <df-messenger
+intent="WELCOME"
+chat-title="TrainMixer"
+agent-id="998169f2-63e6-42b0-a720-73d527b567f8"
+language-code="en"
+></df-messenger>
     </main>
-    
+
     <footer>
         <section class="attributen">Attributen</section>
         <section class="footer">
@@ -54,8 +107,8 @@
             <article class="clear">
                 <a class="button parallelogram" href="#">
                     <span class="skew-fix">x</span>
-                  </a>
-                </article>
+                </a>
+            </article>
 
             <article class="allAtri">
                 <span class="skew-fix">
@@ -77,21 +130,24 @@
                     <img src="./media/icons/ridder.png" alt="">
                     <img src="./media/icons/elektriciteit.png" alt="">
                     <img src="./media/icons/alstom.png" alt="">
-    
+
                 </span>
             </article>
 
             <article class="klaar">
-            <a class="button parallelogram" href="#">
-                <span class="skew-fix">Mixen!</span>
-              </a>
+                <a class="button parallelogram" href="#">
+                    <span class="skew-fix">Mixen!</span>
+                </a>
             </article>
 
         </section>
     </footer>
     <script>
+      
+
         countdown();
     </script>
 </body>
 </script>
+
 </html>

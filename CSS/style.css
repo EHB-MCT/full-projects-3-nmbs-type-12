@@ -134,17 +134,25 @@ main .mysterytrain {
 
 .leftmenu {
     background-color: #25458B;
-    width: 21%;
+    width: 20%;
     box-shadow: 8px 5px 0px -2px #dadada00,
         8px 11px 0px -4px #51B6F8;
     ;
 }
 
+.leftmenu article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
 .leftmenu p {
     display: flex;
     justify-content: center;
-    padding-top: 5px;
-    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 .leftmenu p:first-child {
@@ -152,7 +160,6 @@ main .mysterytrain {
     justify-content: center;
     padding-top: 15px;
     padding-bottom: 0px;
-
 }
 
 .leftmenu figure {
@@ -166,16 +173,19 @@ main .mysterytrain {
 }
 
 .top {
-    position: absolute;
     width: 74px;
     left: 27%;
+    display: none;
 }
 
-.bottom {}
-
-
-
-
+df-messenger {
+    --df-messenger-bot-message: #878fac;
+    --df-messenger-button-titlebar-color: #df9b56;
+    --df-messenger-chat-background-color: #fafafa;
+    --df-messenger-font-color: white;
+    --df-messenger-send-icon: #878fac;
+    --df-messenger-user-message: #479b3d;
+}
 
 
 
@@ -187,10 +197,10 @@ main .mysterytrain {
 
 .attributen {
     background: #2F4169;
-    padding: 20px 50px;
+    padding: 16px 50px;
     position: fixed;
     left: 50%;
-    bottom: 16%;
+    bottom: 14%;
     justify-content: center;
     border-radius: 50px 50px 0px 0px;
     border: 6px solid white;
