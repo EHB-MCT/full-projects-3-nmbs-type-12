@@ -91,17 +91,6 @@ header {
     top: 0;
 }
 
-header .chatbot {
-    position: fixed;
-    right: 12%;
-    background: #25458B;
-    text-decoration: none;
-    padding: 9px;
-    padding-right: 80px;
-    padding-left: 20px;
-    transform: skew(20deg);
-    z-index: 200;
-}
 
 header article {
     transform: skew(-20deg);
@@ -125,6 +114,19 @@ header article p:first-child {
     cursor: pointer;
     text-decoration: none;
     border-radius: 4px;
+    z-index: 1;
+}
+
+#end {
+    border: none;
+    appearance: none;
+    outline: none;
+    display: inline-block;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: -1;
 }
 
 .screen {
@@ -135,20 +137,64 @@ header article p:first-child {
 }
 
 
-
-
-
-
-
-
-/* M A I N */
-
-main .mysterytrain {
+.gevonden {
     position: fixed;
     width: 50%;
     transform: translate(-50%, 0);
     top: 19%;
     left: 50%;
+    z-index: 1500;
+}
+
+.gevonden img {
+    width: 100%;
+}
+
+#trainbutton {
+    display: none;
+    position: absolute;
+    margin: 9% 0% 0% 35%;
+    background-color: #25458B;
+    padding: 10px 21px 5px 21px;
+    color: white;
+    font-size: 18px;
+    border: 0;
+    box-shadow: 8px 5px 0px -2px #dadada00,
+        8px 11px 0px -4px #51B6F8;
+    ;
+} 
+
+#trainbutton:active {
+    background-color: #51B6F8;
+}
+
+
+
+/* M A I N */
+
+main #mysterytrain {
+    position: fixed;
+    width: 50%;
+    transform: translate(-50%, 0);
+    top: 19%;
+    left: 50%;
+}
+
+main #pop-up {
+    display: none;
+    margin-top: 37%;
+    margin-left: 46%;
+    position: absolute;
+    z-index: 7000;
+}
+
+main #pop-up button {
+    background-color: #25458B;
+    padding: 0.5em 1em;
+}
+
+main #pop-up button:active {
+    background-color: #51B6F8;
 }
 
 .leftmenu {
@@ -201,22 +247,23 @@ main .mysterytrain {
 
 df-messenger {
     --df-messenger-bot-message: #878fac;
-    --df-messenger-button-titlebar-color: #df9b56;
+    --df-messenger-button-titlebar-color: #25458B;
     --df-messenger-chat-background-color: #fafafa;
     --df-messenger-font-color: white;
     --df-messenger-send-icon: #878fac;
-    --df-messenger-user-message: #479b3d;
+    --df-messenger-user-message: #51B6F8;
 }
 
 #playField {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
-    margin: 27.5% 0 31px 440px;
+    margin: 27.5% 0 31px 408px;
+    z-index: 6500;
 }
 
 #playField img {
-    width: 85px;
+    width: 75px;
 }
 
 #playField .canvas {
@@ -225,7 +272,7 @@ df-messenger {
 }
 
 #playField #playField2 {
-    margin: 0 4.85%;
+    margin: 0 37.5px;
 }
 
 

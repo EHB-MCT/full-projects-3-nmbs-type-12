@@ -4,8 +4,9 @@
 
 function startGame() {
     start();
-    var fiveMinutes = 60 * 5, // Change the left side to specify the timer
-    // var fiveMinutes = 60 * 0.16, 
+    end();
+    var fiveMinutes = 60 * 4.99, // Change the left side to specify the timer
+    // var fiveMinutes = 60 * 0.32, 
     display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
 }
@@ -18,6 +19,11 @@ function toggleScreen(id, toggle) {
 
 function start() {
     this.toggleScreen('start-screen', false);
+    this.toggleScreen('canvas', true);
+}
+
+function end() {
+    this.toggleScreen('end-screen', false);
     this.toggleScreen('canvas', true);
 }
 
@@ -39,7 +45,7 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = 0;
             document.getElementById("time").style.color = "red";
-            
+            document.getElementById("end-screen").style.display = "block";
         }
     }, 1000);
 }
@@ -69,9 +75,9 @@ var Attributes = [
 ];
 
 var AtriLijst = [];
+var treinLijst = [];
 
 var counter = 1;
-var trainCounter = 1;
 
 var CombinedTrains = [
     "media/images/activtype12.png",
@@ -105,13 +111,26 @@ var buttonsAttributes = [
     "btnIconZeetrein"
 ]
 
+// var showTrains = [
+//     "type 12 trein.png",
+//     "type 18 trein.png",
+//     "type 51 trein.png",
+//     "type 64 trein.png",
+//     "type 211 trein.png",
+//     "type 551 trein.png",
+//     "type 608 trein.png",
+//     "HLE 13 trein.png",
+//     "HLE 21 trein.png",
+//     "pays de waes trein.png"
+// ]
+
 function placeOnField() {
     countdown();
     ClearAll();
     placeOnField1();
     placeOnField2();
     placeOnField3();
-    buttons();
+    MixAttributes();
 }
 
 // All of the paint bucket icons
@@ -272,7 +291,8 @@ function placeOnField3() {
         img.src = Attributes[imageIndex];
         document.getElementById("playField" + counter).appendChild(img);
         counter++;
-                
+        
+        document.getElementById("playField" + counter).appendChild(img) -= img.src;
         document.getElementById("btnIconElektriciteit").className = "active";
         AtriLijst.push("btnIconElektriciteit");
         trainChecker();
@@ -310,6 +330,7 @@ function placeOnField3() {
         counter++;
                 
         document.getElementById("btnIconZeetrein").className = "active";
+        document.getElementById("btnIconZeetrein").removeChild(img);
         AtriLijst.push("btnIconZeetrein");
         trainChecker();
     }
@@ -330,99 +351,168 @@ function ClearAll() {
 }
 
 
-
 //Attributen checker
 // Leftmenu treinen toevoegen en weergeven + Aantal treinen gevonden (nummer)
 // Mix the different attributes with each other to get a train.
 
+let count = 0;
+let minus = 10;
 
 function MixAttributes() {
     trainChecker();
 
     function trainChecker() {
-        let count = 1;
-        let minus = 9;
+       
+
         //Type 18
-        if(AtriLijst.includes("btnIconStoom")&& AtriLijst.includes("btnIconMetaal")&& AtriLijst.includes("btnIconKoning")){
+        if (AtriLijst.includes("btnIconStoom") && AtriLijst.includes("btnIconMetaal") && AtriLijst.includes("btnIconKoning")) {
             document.getElementById("trein3").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound1").style.cssText = "display:flex;";
             document.getElementById("bottom3").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound1");
         }
         //Type 51
-        if(AtriLijst.includes("btnIconStoom")&& AtriLijst.includes("btnIconMetaal")&& AtriLijst.includes("btnIconGeit")){
+        if (AtriLijst.includes("btnIconStoom") && AtriLijst.includes("btnIconMetaal") && AtriLijst.includes("btnIconGeit")) {
             document.getElementById("trein5").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound2").style.cssText = "display:flex;";
             document.getElementById("bottom5").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound2");
         }
-         //Type 211
-         if(AtriLijst.includes("btnIconDiesel")&& AtriLijst.includes("btnIconGroen")&& AtriLijst.includes("btnIconMetaal")){
+        //Type 211
+        if (AtriLijst.includes("btnIconDiesel") && AtriLijst.includes("btnIconGroen") && AtriLijst.includes("btnIconMetaal")) {
             document.getElementById("trein7").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound3").style.cssText = "display:flex;";
             document.getElementById("bottom7").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound3");
         }
-         //Type 608
-         if(AtriLijst.includes("btnIconStoom")&& AtriLijst.includes("btnIconGroen")&& AtriLijst.includes("btnIconMetaal")){
+        //Type 608
+        if (AtriLijst.includes("btnIconStoom") && AtriLijst.includes("btnIconGroen") && AtriLijst.includes("btnIconMetaal")) {
             document.getElementById("trein9").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound4").style.cssText = "display:flex;";
             document.getElementById("bottom9").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound4");
         }
-         //Type 64
-         if(AtriLijst.includes("btnIconMotorwagen")&& AtriLijst.includes("btnIconMetaal")&& AtriLijst.includes("btnIconGroen")){
+        //Type 64
+        if (AtriLijst.includes("btnIconMotorwagen") && AtriLijst.includes("btnIconMetaal") && AtriLijst.includes("btnIconGroen")) {
             document.getElementById("trein6").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound5").style.cssText = "display:flex;";
             document.getElementById("bottom6").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound5");
         }
-         //Type 551
-         if(AtriLijst.includes("btnIconMotorwagen")&& AtriLijst.includes("btnIconMetaal")&& AtriLijst.includes("btnIconBlauw")){
+        //Type 551
+        if (AtriLijst.includes("btnIconMotorwagen") && AtriLijst.includes("btnIconMetaal") && AtriLijst.includes("btnIconBlauw")) {
             document.getElementById("trein8").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound6").style.cssText = "display:flex;";
             document.getElementById("bottom8").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound6");
         }
-         //Tenderlocomotief
-         if(AtriLijst.includes("btnIconRidder")&& AtriLijst.includes("btnIconMetaal")&& AtriLijst.includes("btnIconStroom")){
+        //Tenderlocomotief
+        if (AtriLijst.includes("btnIconRidder") && AtriLijst.includes("btnIconMetaal") && AtriLijst.includes("btnIconStroom")) {
             document.getElementById("trein4").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound7").style.cssText = "display:flex;";
             document.getElementById("bottom4").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound7");
         }
-         //Type 12
-         if(AtriLijst.includes("btnIconZeetrein")&& AtriLijst.includes("btnIconStoom")&& AtriLijst.includes("btnIconGestroomlijnd")){
+        //Type 12
+        if (AtriLijst.includes("btnIconZeetrein") && AtriLijst.includes("btnIconStoom") && AtriLijst.includes("btnIconGestroomlijnd")) {
             document.getElementById("trein1").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound8").style.cssText = "display:flex;";
             document.getElementById("bottom1").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound8");
         }
-         //Type 13
-         if(AtriLijst.includes("btnIconElektriciteit")&& AtriLijst.includes("btnIconGrijsGeel")&& AtriLijst.includes("btnIconAlstom")){
+        //Type 13
+        if (AtriLijst.includes("btnIconElektriciteit") && AtriLijst.includes("btnIconGrijsGeel") && AtriLijst.includes("btnIconAlstom")) {
             document.getElementById("trein2").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound9").style.cssText = "display:flex;";
             document.getElementById("bottom2").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound9");
         }
-         //Type 217
-         if(AtriLijst.includes("btnIconElektriciteit")&& AtriLijst.includes("btnIconBlauwGeel")&& AtriLijst.includes("btnIconPasEnGoed")){
+        //Type 217
+        if (AtriLijst.includes("btnIconElektriciteit") && AtriLijst.includes("btnIconBlauwGeel") && AtriLijst.includes("btnIconPasEnGoed")) {
             document.getElementById("trein10").style.cssText = "display:flex; width:100%;";
+            document.getElementById("treinfound10").style.cssText = "display:flex;";
             document.getElementById("bottom10").style.display = "none";
-            document.getElementById("counttrain").innerHTML = count++;
-            document.getElementById("minusTrain").innerHTML = minus--;
+            document.getElementById("counttrain").innerHTML = count += 1;
+            document.getElementById("minusTrain").innerHTML = minus -= 1;
+            treinLijst.push("treinfound10");
         }
-    
+
         console.log(AtriLijst);
 
         document.getElementById("playField1").innerHTML = "";
-        document.getElementById("playField2").innerHTML = ""; 
-        document.getElementById("playField3").innerHTML = ""; 
+        document.getElementById("playField2").innerHTML = "";
+        document.getElementById("playField3").innerHTML = "";
         counter = 1;
-        
+
         for (let i = 0; i < buttonsAttributes.length; i++) {
             document.getElementById(buttonsAttributes[i]).classList.remove("active");
         }
         AtriLijst = [];
+
+        document.getElementById("mysterytrain").style.display = "none";
+        document.getElementById("trainbutton").style.display = "block";
     }
+}
+
+// Trein animatie bij het drukken van een knop
+
+// var trainsFound = [
+//     "treinfound1",
+//     "treinfound2",
+//     "treinfound3",
+//     "treinfound4",
+//     "treinfound5",
+//     "treinfound6",
+//     "treinfound7",
+//     "treinfound8",
+//     "treinfound9",
+//     "treinfound10",
+// ]
+
+function foundedTrain() {
+    var snelheid = 45;
+    var afstand = 40;
+    var frame = 0;
+    var div = document.getElementById(treinLijst[0]);
+
+    setInterval(function () {
+       
+            
+           
+            var frameOffset = (++frame % afstand) * -snelheid;
+            div.style.marginLeft = frameOffset + "px";
+           
+            console.log(frameOffset);
+    }, 80);
+   
+    setInterval(delayFunction, 2000);
+    document.getElementById("trainbutton").style.cssText = "display: none;";
+    document.getElementById("mysterytrain").style.display = "block";
+    treinLijst.length = 0;
+
+    // for(let i =0; i < trainsFound.length; i++) {
+    //     document.getElementById(trainsFound[i]).style.display = "none";
+    // }
+}
+
+function delayFunction() {
+    document.getElementById(treinLijst[0]).style.cssText = "display:none;";
 }

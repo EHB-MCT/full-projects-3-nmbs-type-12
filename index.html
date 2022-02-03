@@ -2,22 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Train Mixer</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1%22%3E"></script>
 </head>
 
 <body>
+    <div id="end-screen" class="screen" style="display: block;">
+        <img id="end" src="media/images/game over.png"></img>
+    </div>
+
     <div id="start-screen" class="screen" style="display: block;">
         <img id="start" onclick="startGame()" src="media/images/startscreen.png"></img>
     </div>
     <canvas id="canvas" style="display: none;"></canvas>
-
 
     <header>
         <section id="countdownTimer" class="timer">
@@ -26,22 +29,28 @@
             </article>
         </section>
 
-        <section class="chatbot">
-            <article>
-                <p>Chatbot</p>
-                <img src="./media/images/nmbs guy.png" alt="chatbot">
-            </article>
-        </section>
+ 
 
     </header>
 
+    <section class="gevonden">
+        <button id="trainbutton" onclick="foundedTrain()">Next train!</button>
+
+        <img src="./media/images/type 18 trein.png" style="display: none;" id="treinfound1" alt="trein">
+        <img src="./media/images/type 51 trein.png" style="display: none;" id="treinfound2" alt="trein">
+        <img src="./media/images/type 211 trein.png" style="display: none;" id="treinfound3" alt="trein">
+        <img src="./media/images/type 608 trein.png" style="display: none;" id="treinfound4" alt="trein">
+        <img src="./media/images/type 64 trein.png" style="display: none;" id="treinfound5" alt="trein">
+        <img src="./media/images/type 551 trein.png" style="display: none;" id="treinfound6" alt="trein">
+        <img src="./media/images/pays de waes trein.png" style="display: none;" id="treinfound7" alt="trein">
+        <img src="./media/images/Type12.png" style="display: none;" id="treinfound8" alt="trein">
+        <img src="./media/images/HLE 13 trein.png" style="display: none;" id="treinfound9" alt="trein">
+        <img src="./media/images/HLE 21 trein.png" style="display: none;" id="treinfound10" alt="trein">
+    </section>
+
     <main>
       
-        <!-- <section class="pop-up">
-            <button onclick="showTrein()">Super!</button>
-        </section> -->
-
-        <img src="./media/images/mystery train attributen.png" class="mysterytrain" alt="Rechthoekige border">
+        <img src="./media/images/mystery train attributen.png" id="mysterytrain" alt="Rechthoekige border">
         <div id="playField">
             <div class="canvas" id="playField1">
     
@@ -110,10 +119,11 @@
 
         </section>
         <df-messenger
-        intent="WELCOME"
-        chat-title="TrainMixer"
-        agent-id="998169f2-63e6-42b0-a720-73d527b567f8"
-        language-code="en"
+            intent="WELCOME"
+            chat-title="Pete"
+            agent-id="998169f2-63e6-42b0-a720-73d527b567f8"
+            language-code="en"
+            chat-icon="./media/images/nameless catdog.png"
         ></df-messenger>
     </main>
 
